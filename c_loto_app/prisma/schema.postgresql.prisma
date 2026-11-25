@@ -1,0 +1,171 @@
+// C-LOTO Prisma Schema (PostgreSQL for Docker & Production)
+// PT PLN Indonesia Power UBP Cilegon
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  name      String
+  role      String
+  shift     String?
+  division  String?
+  nip       String?
+  createdAt DateTime @default(now())
+}
+
+model LotoCase {
+  id                    String            @id @default(cuid())
+  caseNumber            String            @unique
+  sourceSheet           String?
+  sourceRow             Int?
+  sourceRef             String?
+  no                    String?
+  shift                 String
+  tanggal               String?
+  kks                   String
+  nomorLockTag          String
+  type                  String
+  status                String
+  historicalStatus      String?
+  namaPeralatan         String
+  lokasiPeralatan       String
+  unit                  String
+  peralatan             String
+  bagian                String
+  energyTypes           String
+  workOrderNumber       String?
+  eksekusi              String?
+  executor              String?
+  verifikasiK3          String?
+  tanggalRelease        String?
+  penormalan            String?
+  executorRelease       String?
+  verifikasiK3Release   String?
+  keterangan            String?
+  issues                String?
+  detailTambahan        String?
+  sopValidationPending  Boolean           @default(false)
+  createdAt             DateTime          @default(now())
+  updatedAt             DateTime          @updatedAt
+
+  isolationPoints       IsolationPoint[]
+  verifications         K3Verification[]
+  releaseRequests       ReleaseRequest[]
+  auditEvents           AuditTrail[]
+}
+
+model IsolationPoint {
+  id                   String    @id @default(cuid())
+  caseId               String
+  pointNumber          Int
+  pointName            String
+  kksCode              String
+  energyType           String
+  isolationMethod      String
+  padlockNumber        String
+  tagNumber            String
+  isZeroEnergyVerified Boolean   @default(false)
+  verificationMethod   String?
+  photoUrl             String?
+  normalized           Boolean   @default(false)
+  normalizedAt         DateTime?
+  normalizedBy         String?
+
+  case                 LotoCase  @relation(fields: [caseId], references: [id], onDelete: Cascade)
+}
+
+model K3Verification {
+  id                   String    @id @default(cuid())
+  caseId               String
+  verifierName         String
+  verifierRole         String
+  verifierNip          String?
+  verificationTime     DateTime  @default(now())
+  zeroEnergyConfirmed  Boolean   @default(false)
+  padlockSecured       Boolean   @default(false)
+  dangerTagAffixed     Boolean   @default(false)
+  areaClear            Boolean   @default(false)
+  checklistNotes       String?
+  signatureEvidence    String?
+  status               String    @default("Approved")
+
+  case                 LotoCase  @relation(fields: [caseId], references: [id], onDelete: Cascade)
+}
+
+model ReleaseRequest {
+  id                             String    @id @default(cuid())
+  caseId                         String
+  requestedBy                    String
+  requestedRole                  String
+  requestedAt                    DateTime  @default(now())
+  maintenanceDoneConfirmed       Boolean   @default(false)
+  toolsPersonnelClearConfirmed   Boolean   @default(false)
+  lockOwnerVerified              Boolean   @default(false)
+  authorizedSupervisorApproval   Boolean   @default(false)
+  supervisorName                 String?
+  supervisorApprovalAt           DateTime?
+  k3ReleaseApproval              Boolean   @default(false)
+  k3VerifierName                 String?
+  k3ApprovalAt                   DateTime?
+  physicalNormalizationConfirmed Boolean   @default(false)
+  normalizationExecutor          String?
+  normalizationExecutedAt        DateTime?
+  normalizationNotes             String?
+  status                         String    @default("Pending_Supervisor")
+  rejectionReason                String?
+
+  case                           LotoCase  @relation(fields: [caseId], references: [id], onDelete: Cascade)
+}
+
+model ShiftHandover {
+  id                   String    @id @default(cuid())
+  handoverDate         String
+  outgoingShift        String
+  incomingShift        String
+  outgoingSupervisor   String
+  incomingSupervisor   String?
+  activeCasesCount     Int
+  activeCasesSnapshot  String
+  specialNotes         String
+  safetyIncidents      String    @default("Nihil")
+  acknowledgedAt       DateTime?
+  status               String    @default("Draft")
+  createdAt            DateTime  @default(now())
+}
+
+model ImportBatch {
+  id             String    @id @default(cuid())
+  fileName       String
+  sheetName      String
+  totalRows      Int
+  importedCount  Int
+  flaggedCount   Int
+  importedBy     String
+  importedAt     DateTime  @default(now())
+  summary        String
+}
+
+model AuditTrail {
+  id          String    @id @default(cuid())
+  caseId      String?
+  entityType  String
+  entityId    String
+  action      String
+  actorName   String
+  actorRole   String
+  timestamp   DateTime  @default(now())
+  reason      String?
+  diffBefore  String?
+  diffAfter   String?
+  ipAddress   String?
+
+  case        LotoCase? @relation(fields: [caseId], references: [id], onDelete: SetNull)
+}

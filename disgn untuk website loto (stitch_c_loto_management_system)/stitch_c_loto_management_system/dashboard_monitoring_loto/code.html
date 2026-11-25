@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"background":"#f8f9ff","surface-container-lowest":"#ffffff","surface-container-highest":"#d3e4fe","secondary-fixed-dim":"#bac7e1","outline":"#707881","on-tertiary-container":"#fffbff","secondary-fixed":"#d6e3fe","surface":"#f8f9ff","tertiary-fixed-dim":"#ffb3ad","on-error-container":"#93000a","surface-container":"#e5eeff","surface-tint":"#006398","tertiary":"#b61722","error-container":"#ffdad6","tertiary-container":"#da3437","primary":"#006194","inverse-primary":"#93ccff","inverse-surface":"#213145","surface-container-low":"#eff4ff","on-background":"#0b1c30","surface-bright":"#f8f9ff","on-secondary":"#ffffff","outline-variant":"#bfc7d2","on-surface-variant":"#3f4850","inverse-on-surface":"#eaf1ff","on-surface":"#0b1c30","on-secondary-fixed":"#0e1c2f","primary-fixed-dim":"#93ccff","tertiary-fixed":"#ffdad7","secondary-container":"#d6e3fe","primary-fixed":"#cce5ff","surface-dim":"#cbdbf5","on-secondary-fixed-variant":"#3a475c","surface-container-high":"#dce9ff","secondary":"#525f75","surface-variant":"#d3e4fe","on-primary-container":"#fdfcff","error":"#ba1a1a","on-tertiary-fixed":"#410004","on-primary":"#ffffff","on-secondary-container":"#58657b","on-primary-fixed":"#001d31","on-tertiary":"#ffffff","on-primary-fixed-variant":"#004b73","primary-container":"#007bb9","on-tertiary-fixed-variant":"#930013","on-error":"#ffffff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1rem","margin":"1.5rem","space-xl":"1.5rem","space-2xs":"0.25rem","gutter-lg":"1.5rem","margin-mobile":"1rem","space-2xl":"2rem","space-sm":"0.5rem","gutter":"1rem","space-md":"0.75rem","space-xs":"0.375rem"},fontFamily:{"stat-metric":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-code":["Plus Jakarta Sans"],"label-badge":["Plus Jakarta Sans"]},fontSize:{"stat-metric":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"800"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"display":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"800"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"700"}],"label-code":["13px",{"lineHeight":"18px","letterSpacing":"0.04em","fontWeight":"600"}],"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-on-background z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="px-space-xl pt-space-xl pb-space-lg"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">lock</span></div><div><div class="font-headline-md text-headline-md font-bold tracking-tight text-white flex items-center gap-1.5">C-LOTO <span class="text-[10px] font-label-badge bg-primary px-1.5 py-0.5 rounded text-on-primary">v2.6</span></div><p class="font-body-sm text-body-sm text-secondary-fixed-dim text-[11px] leading-tight mt-0.5">Cilegon Lockout Tagout System</p></div></div><div class="mt-space-lg p-space-sm rounded-lg bg-inverse-surface/60"><div class="flex items-center justify-between"><span class="font-headline-sm text-headline-sm text-white text-[13px]">UBP Cilegon</span><span class="font-label-badge text-label-badge text-primary-fixed bg-primary/40 px-2 py-0.5 rounded">PLN IP</span></div><div class="font-body-sm text-body-sm text-secondary-fixed-dim text-[11px] flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[13px] text-primary-fixed">bolt</span> PLTGU Cilegon (660 MW)</div></div></div><nav class="flex flex-col gap-1 px-space-md" data-active-classes="bg-primary-container text-on-primary font-bold shadow-sm"><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary font-bold shadow-sm" data-path="dashboard" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md text-[13px]">Dashboard</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="data-loto" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">shield_lock</span><span class="font-body-md text-body-md text-[13px]">Data LOTO</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="tambah-loto" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">add_circle</span><span class="font-body-md text-body-md text-[13px]">Tambah LOTO</span></div><span class="font-label-badge text-label-badge bg-primary text-white rounded px-1.5 py-0.5 text-[10px]">Baru</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="verifikasi" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-body-md text-body-md text-[13px]">Verifikasi</span></div><span class="font-label-badge text-label-badge bg-tertiary text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px]">1</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="serah-terima-shift" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">sync_alt</span><span class="font-body-md text-body-md text-[13px]">Serah Terima Shift</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="laporan" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">description</span><span class="font-body-md text-body-md text-[13px]">Laporan</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="audit-trail" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">history</span><span class="font-body-md text-body-md text-[13px]">Audit Trail</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="pengaturan" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md text-[13px]">Pengaturan</span></div></a></nav></div><div class="p-space-md mt-space-lg"><div class="relative rounded-xl overflow-hidden shadow-md bg-inverse-surface"><div class="h-24 w-full bg-cover bg-center opacity-70" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCN65JlI9Q1sr8SzPSLhrWZ7N78AaqaPapxBZ0s1wag9f_WyeyrfORgUfjIFNAMD3_rS69DitojAhmMExEG0SDH7wvoDLvabipWF6xhXFRM4-fsleByd3lW_XXKJNtzRe6DmMJKs8EXo0h0j600g2t33obF1rNlAHVWnvCh1v0p57NGci0cpATZr2sQNOKMxHHsioOfvoDetXpDM0uXd-8p26UpN6dVOWnhYUJeDA_u');"></div><div class="absolute inset-0 bg-gradient-to-t from-on-background via-on-background/60 to-transparent flex flex-col justify-end p-space-sm"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-badge text-label-badge text-white text-[10px] uppercase tracking-wider">PLTGU Cilegon CCGT</span></div><span class="font-body-sm text-body-sm text-secondary-fixed-dim text-[10px]">HRSG Stack &amp; Turbine Island</span></div></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm text-on-surface">Dashboard Monitoring LOTO - UBP Cilegon</span><span class="font-label-code text-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container text-primary font-bold">CLG.05.01.31</span></div><div class="flex items-center gap-2 mt-0.5"><div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px] font-body-sm"><span class="material-symbols-outlined text-[13px] text-primary">verified</span><span>Pratinjau data Excel • bukan real-time</span></div></div></div></div><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><div class="flex items-center gap-2 px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[18px] text-primary">schedule</span><span class="font-body-sm text-body-sm font-bold text-on-surface">Shift: Shift B</span><span class="material-symbols-outlined text-[18px]">arrow_drop_down</span></div></div><div class="relative"><button class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-tertiary text-white flex items-center justify-center font-label-badge text-[9px] font-bold">1</span></div><div class="flex items-center gap-space-md pl-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="font-body-md text-body-md font-bold text-on-surface text-[13px]">Supervisor Operasi</span><span class="w-2 h-2 rounded-full bg-primary-container" title="Online"></span></div><span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Tim K3 &amp; Keselamatan</span></div></div></div></header><main class="w-full pt-16 bg-surface flex-1 px-space-xl py-space-xl"><div class="flex flex-col w-full gap-space-xl">
+<!-- Disclaimer Notice Banner -->
+<div class="flex items-center justify-between bg-surface-container-low px-space-lg py-space-sm rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-6 h-6 rounded-md bg-[#22c55e]/15 text-[#15803d] flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">table_view</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant text-[13px] font-medium">
+<strong class="text-on-surface">Pratinjau data Excel</strong> • bukan real-time • Sinkronisasi Laporan Harian Terakhir: 12 Jan 2026 12:00 WIB
+      </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-badge text-label-badge text-primary bg-primary-fixed/50 px-2 py-0.5 rounded">ID: CLG-LOTO-2026-Q1</span>
+</div>
+</div>
+<!-- 4 Interactive KPI Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Card 1: Total Data -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">database</span>
+</div>
+<div class="text-right">
+<span class="font-stat-metric text-stat-metric text-on-surface block tracking-tight">175</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-bold text-[14px]">Total Data</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-flex items-center gap-1 font-label-badge text-label-badge text-primary bg-surface-container px-2 py-0.5 rounded">
+          Pratinjau (LOTO_2026)
+        </span>
+</div>
+</div>
+<!-- Card 2: Aktif -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="w-12 h-12 rounded-xl bg-[#fee2e2] text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="text-right">
+<span class="font-stat-metric text-stat-metric text-tertiary block tracking-tight">31</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-bold text-[14px]">Aktif</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-flex items-center gap-1 font-label-badge text-label-badge text-tertiary bg-error-container/60 px-2 py-0.5 rounded">
+          Pratinjau (LOTO_2026)
+        </span>
+</div>
+</div>
+<!-- Card 3: Release -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="w-12 h-12 rounded-xl bg-[#dcfce7] text-[#15803d] flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="text-right">
+<span class="font-stat-metric text-stat-metric text-[#15803d] block tracking-tight">143</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-bold text-[14px]">Release</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-flex items-center gap-1 font-label-badge text-label-badge text-[#15803d] bg-[#dcfce7] px-2 py-0.5 rounded">
+          Pratinjau (LOTO_2026)
+        </span>
+</div>
+</div>
+<!-- Card 4: Perlu Validasi -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="w-12 h-12 rounded-xl bg-[#fef3c7] text-[#b45309] flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="text-right">
+<span class="font-stat-metric text-stat-metric text-[#b45309] block tracking-tight">1</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-bold text-[14px]">Perlu Validasi</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-flex items-center gap-1 font-label-badge text-label-badge text-[#b45309] bg-[#fef3c7] px-2 py-0.5 rounded">
+          Pratinjau (LOTO_2026)
+        </span>
+</div>
+</div>
+</div>
+<!-- Main Workstation Layout: 8 cols monitoring + 4 cols actionable workflow -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left Column (8 cols): Data Table + Bar Chart Distribution -->
+<div class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- Card: Daftar LOTO Aktif -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<!-- Card Header & CTA -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">lock_open</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Daftar LOTO Aktif</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Peralatan dalam isolasi fisik berenergi nol aktif di plant</p>
+</div>
+</div>
+<button class="inline-flex items-center gap-2 bg-primary hover:bg-primary-container text-on-primary font-bold px-4 py-2 rounded-lg text-[13px] shadow-sm transition-colors cursor-pointer self-start sm:self-auto">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Tambah LOTO</span>
+</button>
+</div>
+<!-- Filter & Search Toolbar -->
+<div class="grid grid-cols-1 sm:grid-cols-12 gap-space-sm">
+<div class="sm:col-span-6 relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-2 bg-surface-container-low rounded-lg text-[13px] font-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all" id="kksSearchInput" placeholder="Cari KKS / peralatan..." type="text"/>
+</div>
+<div class="sm:col-span-3">
+<div class="relative">
+<select class="w-full appearance-none pl-3 pr-8 py-2 bg-surface-container-low rounded-lg text-[13px] font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer" id="areaFilter">
+<option value="all">Area: Semua Area</option>
+<option value="HRSG">HRSG</option>
+<option value="GT">GT</option>
+<option value="ST">ST</option>
+<option value="BOP">BOP</option>
+<option value="Utilitas">Utilitas</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="sm:col-span-3">
+<div class="relative">
+<select class="w-full appearance-none pl-3 pr-8 py-2 bg-surface-container-low rounded-lg text-[13px] font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer" id="statusFilter">
+<option value="Aktif">Status: Aktif</option>
+<option value="all">Semua Status</option>
+<option value="Validasi">Perlu Validasi</option>
+<option value="Release">Release</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="overflow-x-auto -mx-space-xl px-space-xl">
+<table class="w-full text-left border-collapse" id="lotoTable">
+<thead>
+<tr class="bg-surface-container-low/60 text-secondary font-label-badge text-label-badge uppercase tracking-wider text-[11px]">
+<th class="py-2.5 px-3 rounded-l-lg font-bold">Shift <span class="material-symbols-outlined text-[12px] inline align-middle">unfold_more</span></th>
+<th class="py-2.5 px-3 font-bold">KKS <span class="material-symbols-outlined text-[12px] inline align-middle">unfold_more</span></th>
+<th class="py-2.5 px-3 font-bold">Nama Peralatan <span class="material-symbols-outlined text-[12px] inline align-middle">unfold_more</span></th>
+<th class="py-2.5 px-3 font-bold">Lokasi <span class="material-symbols-outlined text-[12px] inline align-middle">unfold_more</span></th>
+<th class="py-2.5 px-3 font-bold">Tipe Pekerjaan</th>
+<th class="py-2.5 px-3 font-bold">Status <span class="material-symbols-outlined text-[12px] inline align-middle">unfold_more</span></th>
+<th class="py-2.5 px-3 font-bold">Tanggal <span class="material-symbols-outlined text-[12px] inline align-middle">unfold_more</span></th>
+<th class="py-2.5 px-3 rounded-r-lg font-bold text-center">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low text-[13px] font-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group" data-area="HRSG" data-kks="DEMO-KKS-001" data-status="Aktif">
+<td class="py-3 px-3">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded bg-primary-fixed text-primary font-bold text-[11px]">B</span>
+</td>
+<td class="py-3 px-3 font-label-code text-label-code text-primary font-bold whitespace-nowrap">
+                  DEMO-KKS-001
+                </td>
+<td class="py-3 px-3 font-medium text-on-surface">Valve Isolasi HRSG 1.1</td>
+<td class="py-3 px-3 text-on-surface-variant">HRSG 1.1</td>
+<td class="py-3 px-3 text-secondary">Pemeliharaan</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#fee2e2] text-tertiary font-bold text-[11px]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">lock</span> Aktif
+                  </span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant text-[12px] whitespace-nowrap">
+<div>12 Jan 2026</div>
+<div class="text-[10px] text-secondary">08:15 WIB</div>
+</td>
+<td class="py-3 px-3 text-center">
+<button class="w-7 h-7 rounded-md hover:bg-surface-container text-on-surface-variant flex items-center justify-center mx-auto transition-colors" title="Menu Opsi">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group" data-area="GT" data-kks="DEMO-KKS-002" data-status="Aktif">
+<td class="py-3 px-3">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded bg-primary-fixed text-primary font-bold text-[11px]">B</span>
+</td>
+<td class="py-3 px-3 font-label-code text-label-code text-primary font-bold whitespace-nowrap">
+                  DEMO-KKS-002
+                </td>
+<td class="py-3 px-3 font-medium text-on-surface">Pompa Bantu GT 1.2</td>
+<td class="py-3 px-3 text-on-surface-variant">GT 1.2</td>
+<td class="py-3 px-3 text-secondary">Perbaikan</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#fee2e2] text-tertiary font-bold text-[11px]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">lock</span> Aktif
+                  </span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant text-[12px] whitespace-nowrap">
+<div>12 Jan 2026</div>
+<div class="text-[10px] text-secondary">09:30 WIB</div>
+</td>
+<td class="py-3 px-3 text-center">
+<button class="w-7 h-7 rounded-md hover:bg-surface-container text-on-surface-variant flex items-center justify-center mx-auto transition-colors" title="Menu Opsi">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group" data-area="ST" data-kks="DEMO-KKS-003" data-status="Aktif">
+<td class="py-3 px-3">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded bg-primary-fixed text-primary font-bold text-[11px]">B</span>
+</td>
+<td class="py-3 px-3 font-label-code text-label-code text-primary font-bold whitespace-nowrap">
+                  DEMO-KKS-003
+                </td>
+<td class="py-3 px-3 font-medium text-on-surface">Breaker Sistem ST</td>
+<td class="py-3 px-3 text-on-surface-variant">ST Building</td>
+<td class="py-3 px-3 text-secondary">Penggantian</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#fee2e2] text-tertiary font-bold text-[11px]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">lock</span> Aktif
+                  </span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant text-[12px] whitespace-nowrap">
+<div>12 Jan 2026</div>
+<div class="text-[10px] text-secondary">10:05 WIB</div>
+</td>
+<td class="py-3 px-3 text-center">
+<button class="w-7 h-7 rounded-md hover:bg-surface-container text-on-surface-variant flex items-center justify-center mx-auto transition-colors" title="Menu Opsi">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group" data-area="HRSG" data-kks="DEMO-KKS-004" data-status="Aktif">
+<td class="py-3 px-3">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded bg-primary-fixed text-primary font-bold text-[11px]">B</span>
+</td>
+<td class="py-3 px-3 font-label-code text-label-code text-primary font-bold whitespace-nowrap">
+                  DEMO-KKS-004
+                </td>
+<td class="py-3 px-3 font-medium text-on-surface">Drain LP Economizer</td>
+<td class="py-3 px-3 text-on-surface-variant">HRSG 1.2</td>
+<td class="py-3 px-3 text-secondary">Pembersihan</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#fee2e2] text-tertiary font-bold text-[11px]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">lock</span> Aktif
+                  </span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant text-[12px] whitespace-nowrap">
+<div>12 Jan 2026</div>
+<div class="text-[10px] text-secondary">11:20 WIB</div>
+</td>
+<td class="py-3 px-3 text-center">
+<button class="w-7 h-7 rounded-md hover:bg-surface-container text-on-surface-variant flex items-center justify-center mx-auto transition-colors" title="Menu Opsi">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Pagination Info -->
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant text-[12px]">
+<span>Menampilkan 4 dari 31 LOTO aktif</span>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface text-[12px] font-bold">1</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-low text-secondary text-[12px]">2</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-low text-secondary text-[12px]">3</button>
+<button class="px-2 py-1 rounded hover:bg-surface-container-low text-secondary">
+<span class="material-symbols-outlined text-[14px] align-middle">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card: Sebaran LOTO per Area & Ringkasan -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">bar_chart</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Sebaran LOTO per Area</h3>
+<span class="font-label-badge text-label-badge text-primary bg-primary-fixed/50 px-2 py-0.5 rounded">
+              Pratinjau (LOTO_2026)
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Distribusi Kumulatif Total Plant</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Horizontal Bar Chart (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-3 py-2">
+<!-- HRSG: 74 / 80 (92.5%) -->
+<div class="flex items-center gap-3">
+<span class="w-16 font-label-code text-label-code text-right text-on-surface text-[12px] font-bold">HRSG</span>
+<div class="flex-1 bg-surface-container-low rounded-r-md h-7 relative flex items-center overflow-hidden">
+<div class="bg-primary hover:bg-primary-container transition-all h-full rounded-r-md flex items-center justify-end pr-2 text-white font-bold text-[12px]" style="width: 92.5%;">
+                  74
+                </div>
+</div>
+</div>
+<!-- GT: 39 / 80 (48.75%) -->
+<div class="flex items-center gap-3">
+<span class="w-16 font-label-code text-label-code text-right text-on-surface text-[12px] font-bold">GT</span>
+<div class="flex-1 bg-surface-container-low rounded-r-md h-7 relative flex items-center overflow-hidden">
+<div class="bg-primary/85 hover:bg-primary transition-all h-full rounded-r-md flex items-center justify-end pr-2 text-white font-bold text-[12px]" style="width: 48.75%;">
+                  39
+                </div>
+</div>
+</div>
+<!-- ST: 28 / 80 (35%) -->
+<div class="flex items-center gap-3">
+<span class="w-16 font-label-code text-label-code text-right text-on-surface text-[12px] font-bold">ST</span>
+<div class="flex-1 bg-surface-container-low rounded-r-md h-7 relative flex items-center overflow-hidden">
+<div class="bg-primary/70 hover:bg-primary transition-all h-full rounded-r-md flex items-center justify-end pr-2 text-white font-bold text-[12px]" style="width: 35%;">
+                  28
+                </div>
+</div>
+</div>
+<!-- BOP: 20 / 80 (25%) -->
+<div class="flex items-center gap-3">
+<span class="w-16 font-label-code text-label-code text-right text-on-surface text-[12px] font-bold">BOP</span>
+<div class="flex-1 bg-surface-container-low rounded-r-md h-7 relative flex items-center overflow-hidden">
+<div class="bg-primary/55 hover:bg-primary transition-all h-full rounded-r-md flex items-center justify-end pr-2 text-white font-bold text-[12px]" style="width: 25%;">
+                  20
+                </div>
+</div>
+</div>
+<!-- Utilitas: 14 / 80 (17.5%) -->
+<div class="flex items-center gap-3">
+<span class="w-16 font-label-code text-label-code text-right text-on-surface text-[12px] font-bold">Utilitas</span>
+<div class="flex-1 bg-surface-container-low rounded-r-md h-7 relative flex items-center overflow-hidden">
+<div class="bg-primary/40 hover:bg-primary transition-all h-full rounded-r-md flex items-center justify-end pr-2 text-on-surface font-bold text-[12px]" style="width: 17.5%;">
+                  14
+                </div>
+</div>
+</div>
+<!-- X-Axis Scale Indicator -->
+<div class="flex items-center gap-3 pt-1">
+<span class="w-16"></span>
+<div class="flex-1 flex justify-between font-label-badge text-label-badge text-secondary text-[11px] px-1">
+<span>0</span>
+<span>10</span>
+<span>20</span>
+<span>30</span>
+<span>40</span>
+<span>50</span>
+<span>60</span>
+<span>70</span>
+<span>80</span>
+</div>
+</div>
+</div>
+<!-- Ringkasan Stat Box (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-low/70 rounded-xl p-space-lg flex flex-col justify-between h-full">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">info</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface text-[14px]">Ringkasan</span>
+</div>
+<ul class="flex flex-col gap-2 mt-1 font-body-sm text-body-sm text-on-surface text-[12.5px]">
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Total data: <strong class="text-on-surface font-bold">175</strong></span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>LOTO aktif: <strong class="text-tertiary font-bold">31</strong></span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-[#15803d]"></span>
+<span>LOTO release: <strong class="text-[#15803d] font-bold">143</strong></span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-[#b45309]"></span>
+<span>Perlu validasi: <strong class="text-[#b45309] font-bold">1</strong></span>
+</li>
+</ul>
+</div>
+<p class="font-body-sm text-body-sm italic text-secondary text-[11px] mt-space-md pt-space-xs">
+              (Pratinjau data LOTO_2026)
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (4 cols): Tindak Lanjut + Alur Proses LOTO + Plant Safety Note -->
+<div class="lg:col-span-4 flex flex-col gap-space-xl">
+<!-- Panel 1: Tindak Lanjut -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">assignment</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Tindak Lanjut</h3>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Item 1: Menunggu Verifikasi K3 -->
+<a class="group p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex items-center justify-between" href="#">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-[#fee2e2] text-tertiary flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold text-[13px] group-hover:text-primary transition-colors">
+                  Menunggu Verifikasi K3
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11.5px]">
+                  1 data perlu diverifikasi
+                </span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 group-hover:text-primary transition-all text-[20px]">chevron_right</span>
+</a>
+<!-- Item 2: Serah Terima Shift -->
+<a class="group p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex items-center justify-between" href="#">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">sync_alt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold text-[13px] group-hover:text-primary transition-colors">
+                  Serah Terima Shift
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11.5px]">
+                  Lakukan serah terima LOTO antar shift (A/B/C/D)
+                </span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 group-hover:text-primary transition-all text-[20px]">chevron_right</span>
+</a>
+<!-- Item 3: Tinjau Data Lama -->
+<a class="group p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex items-center justify-between" href="#">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold text-[13px] group-hover:text-primary transition-colors">
+                  Tinjau Data Lama
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11.5px]">
+                  Cek LOTO yang sudah release (arsip &amp; evaluasi)
+                </span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 group-hover:text-primary transition-all text-[20px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Panel 2: Alur Proses LOTO (Stepper) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">flowsheet</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Alur Proses LOTO</h3>
+</div>
+<div class="bg-surface-container-low/60 rounded-xl p-space-md">
+<div class="flex items-center justify-between gap-1 overflow-x-auto py-1">
+<!-- Step 1: Pengajuan -->
+<div class="flex flex-col items-center text-center gap-1.5 min-w-[50px]">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<span class="font-label-badge text-label-badge text-on-surface text-[10px] font-bold">Pengajuan</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[16px]">arrow_forward</span>
+<!-- Step 2: Isolasi -->
+<div class="flex flex-col items-center text-center gap-1.5 min-w-[50px]">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">build</span>
+</div>
+<span class="font-label-badge text-label-badge text-on-surface text-[10px] font-bold">Isolasi</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[16px]">arrow_forward</span>
+<!-- Step 3: Verifikasi -->
+<div class="flex flex-col items-center text-center gap-1.5 min-w-[50px]">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<span class="font-label-badge text-label-badge text-on-surface text-[10px] font-bold">Verifikasi</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[16px]">arrow_forward</span>
+<!-- Step 4: Aktif -->
+<div class="flex flex-col items-center text-center gap-1.5 min-w-[50px]">
+<div class="w-10 h-10 rounded-lg bg-[#fee2e2] text-tertiary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<span class="font-label-badge text-label-badge text-tertiary text-[10px] font-bold">Aktif</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[16px]">arrow_forward</span>
+<!-- Step 5: Release -->
+<div class="flex flex-col items-center text-center gap-1.5 min-w-[50px]">
+<div class="w-10 h-10 rounded-lg bg-[#dcfce7] text-[#15803d] flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-label-badge text-label-badge text-[#15803d] text-[10px] font-bold">Release</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel 3: Plant Safety Notice Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-headline-sm text-headline-sm text-[13px] font-bold uppercase tracking-wider">Catatan Keselamatan</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[11.5px] leading-relaxed">
+          Sistem C-LOTO berfungsi untuk pencatatan dan monitoring administratif. Pelepasan gembok fisik dan penormalan energi wajib dilakukan secara manual langsung di lapangan oleh personel berwenang sesuai SOP Isolasi UBP Cilegon.
+        </p>
+<div class="mt-1 flex items-center justify-between text-[11px] font-label-badge text-secondary">
+<span>K3 &amp; Keandalan Operasi</span>
+<span class="text-primary font-bold">K3-CLG-SOP-04</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic client-side filtering for KKS & Area
+  const kksInput = document.getElementById('kksSearchInput');
+  const areaSelect = document.getElementById('areaFilter');
+  const tableRows = document.querySelectorAll('#lotoTable tbody tr');
+
+  function filterTable() {
+    const query = (kksInput.value || '').toLowerCase().trim();
+    const selectedArea = areaSelect.value;
+
+    tableRows.forEach(row => {
+      const kks = (row.getAttribute('data-kks') || '').toLowerCase();
+      const area = row.getAttribute('data-area') || '';
+      const text = row.innerText.toLowerCase();
+
+      const matchesQuery = query === '' || text.includes(query) || kks.includes(query);
+      const matchesArea = selectedArea === 'all' || area === selectedArea;
+
+      if (matchesQuery && matchesArea) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  if (kksInput) kksInput.addEventListener('input', filterTable);
+  if (areaSelect) areaSelect.addEventListener('change', filterTable);
+</script></main></div></body></html>

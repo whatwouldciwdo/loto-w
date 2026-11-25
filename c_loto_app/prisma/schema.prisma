@@ -1,0 +1,171 @@
+// C-LOTO Prisma Schema
+// PT PLN Indonesia Power UBP Cilegon
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  name      String
+  role      String   // "Operator Shift", "Supervisor Shift", "Maintenance Authorized Person", "Verifikator K3", "Admin Sistem", "Auditor"
+  shift     String?  // "A", "B", "C", "D"
+  division  String?  // "Operasi", "Pemeliharaan Mesin", "Pemeliharaan Listrik", "K3L", "Enjiniring"
+  nip       String?
+  createdAt DateTime @default(now())
+}
+
+model LotoCase {
+  id                    String            @id @default(cuid())
+  caseNumber            String            @unique // e.g. "LOTO-2026-0031"
+  sourceSheet           String?           // e.g. "LOTO_2026", "DEMO_ONLY"
+  sourceRow             Int?
+  sourceRef             String?           // e.g. "LOTO_2026!44"
+  no                    String?           // legacy serial stored as STRING
+  shift                 String            // "A", "B", "C", "D"
+  tanggal               String?           // ISO date "YYYY-MM-DD"
+  kks                   String            // String to maintain leading zeros & multi-KKS
+  nomorLockTag          String            // String to prevent losing "012", "017"
+  type                  String            // "WO CM", "WO CD", "WO PM", "WO PRO", "OH", "Other"
+  status                String            // "Draft", "Menunggu Persetujuan", "Menunggu Verifikasi", "Aktif", "Permintaan Release", "Release"
+  historicalStatus      String?           // "Aktif", "Release", or null from Excel
+  namaPeralatan         String
+  lokasiPeralatan       String            // e.g. "GT 1.1", "HRSG 1.1", "ST", "BOP"
+  unit                  String            // "GT 1.1", "GT 1.2", "ST 1.0", "HRSG 1.1", "HRSG 1.2", "BOP"
+  peralatan             String            // Valve, Breaker, Switchgear, etc.
+  bagian                String            // Bagian pelaksana
+  energyTypes           String            // JSON string array e.g. ["Listrik", "Mekanik"]
+  workOrderNumber       String?
+  eksekusi              String?           // Tindakan isolasi
+  executor              String?           // Pelaksana isolasi
+  verifikasiK3          String?           // Verifikator awal
+  tanggalRelease        String?           // ISO date
+  penormalan            String?           // Tindakan penormalan fisik
+  executorRelease       String?           // Pelaksana penormalan
+  verifikasiK3Release   String?           // Verifikator penormalan
+  keterangan            String?
+  issues                String?           // JSON array of detected issues
+  detailTambahan        String?           // JSON array of continuation rows / multi points
+  sopValidationPending  Boolean           @default(false)
+  createdAt             DateTime          @default(now())
+  updatedAt             DateTime          @updatedAt
+
+  isolationPoints       IsolationPoint[]
+  verifications         K3Verification[]
+  releaseRequests       ReleaseRequest[]
+  auditEvents           AuditTrail[]
+}
+
+model IsolationPoint {
+  id                   String    @id @default(cuid())
+  caseId               String
+  pointNumber          Int
+  pointName            String
+  kksCode              String
+  energyType           String    // Listrik, Mekanik, Kimia, Termal, Hidrolik, Pneumatik
+  isolationMethod      String    // Breaker Rack-Out, Locked Valve, etc.
+  padlockNumber        String    // String with leading zero
+  tagNumber            String    // String
+  isZeroEnergyVerified Boolean   @default(false)
+  verificationMethod   String?   // Multi-meter test, bleed valve, etc.
+  photoUrl             String?
+  normalized           Boolean   @default(false)
+  normalizedAt         DateTime?
+  normalizedBy         String?
+
+  case                 LotoCase  @relation(fields: [caseId], references: [id], onDelete: Cascade)
+}
+
+model K3Verification {
+  id                   String    @id @default(cuid())
+  caseId               String
+  verifierName         String
+  verifierRole         String    // "Verifikator K3"
+  verifierNip          String?
+  verificationTime     DateTime  @default(now())
+  zeroEnergyConfirmed  Boolean   @default(false)
+  padlockSecured       Boolean   @default(false)
+  dangerTagAffixed     Boolean   @default(false)
+  areaClear            Boolean   @default(false)
+  checklistNotes       String?
+  signatureEvidence    String?
+  status               String    @default("Approved") // Approved, Rejected
+
+  case                 LotoCase  @relation(fields: [caseId], references: [id], onDelete: Cascade)
+}
+
+model ReleaseRequest {
+  id                             String    @id @default(cuid())
+  caseId                         String
+  requestedBy                    String
+  requestedRole                  String
+  requestedAt                    DateTime  @default(now())
+  maintenanceDoneConfirmed       Boolean   @default(false)
+  toolsPersonnelClearConfirmed   Boolean   @default(false)
+  lockOwnerVerified              Boolean   @default(false)
+  authorizedSupervisorApproval   Boolean   @default(false)
+  supervisorName                 String?
+  supervisorApprovalAt           DateTime?
+  k3ReleaseApproval              Boolean   @default(false)
+  k3VerifierName                 String?
+  k3ApprovalAt                   DateTime?
+  physicalNormalizationConfirmed Boolean   @default(false)
+  normalizationExecutor          String?
+  normalizationExecutedAt        DateTime?
+  normalizationNotes             String?
+  status                         String    @default("Pending_Supervisor") // Pending_Supervisor, Pending_K3, Ready_For_Physical_Normalization, Completed, Rejected
+  rejectionReason                String?
+
+  case                           LotoCase  @relation(fields: [caseId], references: [id], onDelete: Cascade)
+}
+
+model ShiftHandover {
+  id                   String    @id @default(cuid())
+  handoverDate         String    // YYYY-MM-DD
+  outgoingShift        String    // A, B, C, D
+  incomingShift        String    // A, B, C, D
+  outgoingSupervisor   String
+  incomingSupervisor   String?
+  activeCasesCount     Int
+  activeCasesSnapshot  String    // JSON snapshot
+  specialNotes         String
+  safetyIncidents      String    @default("Nihil")
+  acknowledgedAt       DateTime?
+  status               String    @default("Draft") // Draft, Submitted, Acknowledged
+  createdAt            DateTime  @default(now())
+}
+
+model ImportBatch {
+  id             String    @id @default(cuid())
+  fileName       String
+  sheetName      String
+  totalRows      Int
+  importedCount  Int
+  flaggedCount   Int
+  importedBy     String
+  importedAt     DateTime  @default(now())
+  summary        String
+}
+
+model AuditTrail {
+  id          String    @id @default(cuid())
+  caseId      String?
+  entityType  String    // LOTO_CASE, VERIFICATION, RELEASE_REQUEST, SHIFT_HANDOVER, IMPORT_BATCH, USER_ROLE
+  entityId    String
+  action      String    // CREATE, UPDATE, VERIFY_K3, REQUEST_RELEASE, APPROVE_RELEASE, EXECUTE_NORMALIZATION, SHIFT_HANDOVER, IMPORT_EXCEL
+  actorName   String
+  actorRole   String
+  timestamp   DateTime  @default(now())
+  reason      String?
+  diffBefore  String?   // JSON
+  diffAfter   String?   // JSON
+  ipAddress   String?
+
+  case        LotoCase? @relation(fields: [caseId], references: [id], onDelete: SetNull)
+}

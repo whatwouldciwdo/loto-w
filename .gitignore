@@ -1,0 +1,20 @@
+# Dependencies & Build
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# Environment & Local DB
+.env
+.env*.local
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# OS & Logs
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*

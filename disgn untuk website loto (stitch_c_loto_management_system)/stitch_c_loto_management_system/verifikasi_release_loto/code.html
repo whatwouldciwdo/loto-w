@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"background":"#f8f9ff","surface-container-lowest":"#ffffff","surface-container-highest":"#d3e4fe","secondary-fixed-dim":"#bac7e1","outline":"#707881","on-tertiary-container":"#fffbff","secondary-fixed":"#d6e3fe","surface":"#f8f9ff","tertiary-fixed-dim":"#ffb3ad","on-error-container":"#93000a","surface-container":"#e5eeff","surface-tint":"#006398","tertiary":"#b61722","error-container":"#ffdad6","tertiary-container":"#da3437","primary":"#006194","inverse-primary":"#93ccff","inverse-surface":"#213145","surface-container-low":"#eff4ff","on-background":"#0b1c30","surface-bright":"#f8f9ff","on-secondary":"#ffffff","outline-variant":"#bfc7d2","on-surface-variant":"#3f4850","inverse-on-surface":"#eaf1ff","on-surface":"#0b1c30","on-secondary-fixed":"#0e1c2f","primary-fixed-dim":"#93ccff","tertiary-fixed":"#ffdad7","secondary-container":"#d6e3fe","primary-fixed":"#cce5ff","surface-dim":"#cbdbf5","on-secondary-fixed-variant":"#3a475c","surface-container-high":"#dce9ff","secondary":"#525f75","surface-variant":"#d3e4fe","on-primary-container":"#fdfcff","error":"#ba1a1a","on-tertiary-fixed":"#410004","on-primary":"#ffffff","on-secondary-container":"#58657b","on-primary-fixed":"#001d31","on-tertiary":"#ffffff","on-primary-fixed-variant":"#004b73","primary-container":"#007bb9","on-tertiary-fixed-variant":"#930013","on-error":"#ffffff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1rem","margin":"1.5rem","space-xl":"1.5rem","space-2xs":"0.25rem","gutter-lg":"1.5rem","margin-mobile":"1rem","space-2xl":"2rem","space-sm":"0.5rem","gutter":"1rem","space-md":"0.75rem","space-xs":"0.375rem"},fontFamily:{"stat-metric":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-code":["Plus Jakarta Sans"],"label-badge":["Plus Jakarta Sans"]},fontSize:{"stat-metric":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"800"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"display":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"800"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"700"}],"label-code":["13px",{"lineHeight":"18px","letterSpacing":"0.04em","fontWeight":"600"}],"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-on-background z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="px-space-xl pt-space-xl pb-space-lg"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">lock</span></div><div><div class="font-headline-md text-headline-md font-bold tracking-tight text-white flex items-center gap-1.5">C-LOTO <span class="text-[10px] font-label-badge bg-primary px-1.5 py-0.5 rounded text-on-primary">v2.6</span></div><p class="font-body-sm text-body-sm text-secondary-fixed-dim text-[11px] leading-tight mt-0.5">Cilegon Lockout Tagout System</p></div></div><div class="mt-space-lg p-space-sm rounded-lg bg-inverse-surface/60"><div class="flex items-center justify-between"><span class="font-headline-sm text-headline-sm text-white text-[13px]">UBP Cilegon</span><span class="font-label-badge text-label-badge text-primary-fixed bg-primary/40 px-2 py-0.5 rounded">PLN IP</span></div><div class="font-body-sm text-body-sm text-secondary-fixed-dim text-[11px] flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[13px] text-primary-fixed">bolt</span> PLTGU Cilegon (660 MW)</div></div></div><nav class="flex flex-col gap-1 px-space-md" data-active-classes="bg-primary-container text-on-primary font-bold shadow-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="dashboard" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md text-[13px]">Dashboard</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="data-loto" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">shield_lock</span><span class="font-body-md text-body-md text-[13px]">Data LOTO</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="tambah-loto" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">add_circle</span><span class="font-body-md text-body-md text-[13px]">Tambah LOTO</span></div><span class="font-label-badge text-label-badge bg-primary text-white rounded px-1.5 py-0.5 text-[10px]">Baru</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="verifikasi" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-body-md text-body-md text-[13px]">Verifikasi</span></div><span class="font-label-badge text-label-badge bg-tertiary text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px]">1</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="serah-terima-shift" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">sync_alt</span><span class="font-body-md text-body-md text-[13px]">Serah Terima Shift</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="laporan" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">description</span><span class="font-body-md text-body-md text-[13px]">Laporan</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="audit-trail" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">history</span><span class="font-body-md text-body-md text-[13px]">Audit Trail</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-inverse-surface hover:text-white transition-colors" data-path="pengaturan" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md text-[13px]">Pengaturan</span></div></a></nav></div><div class="p-space-md mt-space-lg"><div class="relative rounded-xl overflow-hidden shadow-md bg-inverse-surface"><div class="h-24 w-full bg-cover bg-center opacity-70" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVwy-JkM9wSbY2lK1P_OKHLv6ks33GEApsDSUXUallpX5JJwmEhMag2bj_LfmSGvysPCEY6VeSixjqwE5q-IiF3y5JNLIrdfpizjXcEMiPvSnw5jykvKOI6SwJbnMMcosrB4p0lLPoBsM_x9pSXf5Oecl5ob1Lp36m9xEZNazRZeJ6nzzD83VOqOzR7Uoy8y317NlPvLbgHNrAmFnIioNw8SdZCTB23ytb9xX0PsWB');"></div><div class="absolute inset-0 bg-gradient-to-t from-on-background via-on-background/60 to-transparent flex flex-col justify-end p-space-sm"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-badge text-label-badge text-white text-[10px] uppercase tracking-wider">PLTGU Cilegon CCGT</span></div><span class="font-body-sm text-body-sm text-secondary-fixed-dim text-[10px]">HRSG Stack &amp; Turbine Island</span></div></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm text-on-surface">Dashboard Monitoring LOTO - UBP Cilegon</span><span class="font-label-code text-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container text-primary font-bold">CLG.05.01.31</span></div><div class="flex items-center gap-2 mt-0.5"><div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px] font-body-sm"><span class="material-symbols-outlined text-[13px] text-primary">verified</span><span>Pratinjau data Excel • bukan real-time</span></div></div></div></div><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><div class="flex items-center gap-2 px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[18px] text-primary">schedule</span><span class="font-body-sm text-body-sm font-bold text-on-surface">Shift: Shift B</span><span class="material-symbols-outlined text-[18px]">arrow_drop_down</span></div></div><div class="relative"><button class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-tertiary text-white flex items-center justify-center font-label-badge text-[9px] font-bold">1</span></div><div class="flex items-center gap-space-md pl-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="font-body-md text-body-md font-bold text-on-surface text-[13px]">Supervisor Operasi</span><span class="w-2 h-2 rounded-full bg-primary-container" title="Online"></span></div><span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Tim K3 &amp; Keselamatan</span></div></div></div></header><main class="w-full pt-16 bg-surface flex-1 px-space-xl py-space-xl"><div class="flex flex-col w-full gap-space-xl">
+<!-- Top Operational Banner & Quick Meta Context -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-xl rounded-xl shadow-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm mb-1">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tertiary-container/15 text-tertiary font-label-badge text-label-badge uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+          Perlu Tindakan K3 Segera
+        </span>
+<span class="font-label-code text-label-code text-secondary">REF: SOP CLG.05.01.31 / AMDT-4</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Verifikasi Lapangan &amp; Otorisasi Release LOTO</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+        Proses multi-otorisasi pelepasan gembok isolasi sesuai SOP CLG.05.01.31 UBP Cilegon (660 MW)
+      </p>
+</div>
+<!-- Quick Action / Auditor Counter -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-md bg-surface-container-low px-space-lg py-space-sm rounded-lg">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-secondary">Antrean Lapangan</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">1 Kritis • 4 Siap</span>
+</div>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-space-lg py-2.5 rounded-lg shadow-sm hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span class="font-label-badge text-label-badge uppercase tracking-wider">Unduh Berita Acara</span>
+</button>
+</div>
+</div>
+<!-- Navigation Tabs Filter Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md border-b-0">
+<div class="inline-flex p-1.5 rounded-xl bg-surface-container-high/60 gap-1.5">
+<button class="inline-flex items-center gap-2 px-space-lg py-2 rounded-lg bg-surface-container-lowest text-primary font-headline-sm text-[13px] shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary">notification_important</span>
+<span>Menunggu Verifikasi K3</span>
+<span class="font-label-badge text-label-badge bg-tertiary text-on-tertiary px-2 py-0.5 rounded-full ml-1">1</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-lg py-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-lowest/50 transition-colors font-body-md text-[13px]">
+<span class="material-symbols-outlined text-[18px]">checklist_rtl</span>
+<span>Permohonan Release Selesai Kerja</span>
+<span class="font-label-badge text-label-badge bg-surface-container-highest text-on-secondary-container px-2 py-0.5 rounded-full ml-1">4</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-lg py-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-lowest/50 transition-colors font-body-md text-[13px]">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+<span>Riwayat Otorisasi Pelepasan</span>
+</button>
+</div>
+<!-- Active Unit Selector / Breadcrumb context -->
+<div class="flex items-center gap-2 bg-surface-container-low px-space-md py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+<span class="font-label-code text-label-code text-on-surface font-bold">PLTGU BLOK 1</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-secondary">HRSG &amp; Demin System</span>
+</div>
+</div>
+<!-- Main Bento Inspection Grid: 8-col workflow + 4-col auth trigger -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT 8-COL: Deep Inspection Details & Multi-Stage Matrix -->
+<div class="xl:col-span-8 flex flex-col gap-space-xl">
+<!-- Primary Target Item Header Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/10 flex items-center justify-center text-tertiary mt-1">
+<span class="material-symbols-outlined text-[28px]">lock_reset</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-label-code text-label-code bg-surface-container-high px-2 py-0.5 rounded text-primary font-bold">
+                  LOTO-2026-0028
+                </span>
+<span class="font-label-code text-label-code bg-surface-container px-2 py-0.5 rounded text-secondary font-bold">
+                  KKS: 10GCB01-AA002
+                </span>
+<span class="inline-flex items-center gap-1 font-label-badge text-label-badge bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                  Pekerjaan Fisik Selesai - Siap Verifikasi Release
+                </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1">
+                Demin Water Supply Header &amp; Booster Pump #1 Isolation
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Unit Pengolahan Air Demineralisasi (Water Treatment Plant) - Area Raw Demin Main Valve Line
+              </p>
+</div>
+</div>
+<div class="flex flex-col items-end text-right">
+<span class="font-body-sm text-body-sm text-secondary">Tgl Pengajuan Rilis</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">11 Jan 2026 • 16:45 WIB</span>
+<span class="font-label-badge text-label-badge text-primary mt-0.5">Shift B (Aktif)</span>
+</div>
+</div>
+<!-- Technical Isolation Specs Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md bg-surface-container-low p-space-md rounded-lg">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-secondary">Tipe Energi Terisolasi</span>
+<span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">water_drop</span>
+              Fluida Bertekanan (16 Bar)
+            </span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-secondary">Master Lock Box ID</span>
+<span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-primary">key</span>
+              MLB-WTP-004 (Slot #02)
+            </span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-secondary">Jumlah Gembok Tag</span>
+<span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-primary">pin</span>
+              3 Titik Isolasi Fisik
+            </span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-secondary">Izin Kerja (PTW)</span>
+<span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-primary">assignment</span>
+              PTW-CLG-26-8910
+            </span>
+</div>
+</div>
+</div>
+<!-- Critical K3 Mandatory Warning Strip -->
+<div class="bg-tertiary-container/10 p-space-lg rounded-xl shadow-sm flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-badge text-label-badge uppercase tracking-wider text-tertiary font-bold">
+            Peringatan Protokol Keselamatan Kerja Listrik &amp; Mekanikal
+          </span>
+<p class="font-body-md text-body-md text-on-surface mt-1 leading-relaxed">
+            Pelepasan gembok dan tag LOTO hanya boleh dilakukan oleh petugas yang namanya tertera pada formulir atau pengganti resmi yang disahkan dalam <strong>Berita Acara Serah Terima Shift</strong>. Pastikan tidak ada orang di zona bahaya mekanik sebelum izin master release dibuka.
+          </p>
+</div>
+</div>
+<!-- Multi-Stage Approval Matrix & Tanda Tangan Digital -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-xl">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface">Matriks Multi-Otorisasi Pelepasan Gembok</h3>
+<p class="font-body-sm text-body-sm text-secondary">Verifikasi sekuensial wajib 4 pilar pengesahan operasional pembangkit</p>
+</div>
+<span class="font-label-badge text-label-badge bg-surface-container-high px-2.5 py-1 rounded text-primary">
+            Progress: 2 dari 4 Selesai
+          </span>
+</div>
+<div class="flex flex-col gap-space-lg relative">
+<!-- STAGE 1: Pelaksana Pekerjaan (SELESAI) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md relative">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-[14px]">
+                  1
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tim Pemeliharaan (Pelaksana Pekerjaan)</span>
+<span class="font-body-sm text-body-sm text-secondary">Deklarasi penyelesaian fisik pekerjaan perbaikan</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-badge text-label-badge">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                Telah Ditandatangani
+              </div>
+</div>
+<!-- Checklists -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pl-11">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">check_box</span>
+<span>Peralatan selesai diperbaiki</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">check_box</span>
+<span>Housekeeping bersih &amp; nihil tools</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">check_box</span>
+<span>Personil ditarik dari lokasi</span>
+</div>
+</div>
+<!-- Signee Digital Stamp -->
+<div class="ml-11 mt-1 bg-surface-container-lowest p-space-md rounded-lg flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-primary font-bold">
+                  KL
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-[13px] text-on-surface">M. Fachri (Supervisor Kimia &amp; Lingkungan)</span>
+<span class="font-label-code text-label-code text-[11px] text-secondary">NIP. 8913098Z • Digital Signature Validated</span>
+</div>
+</div>
+<span class="font-label-code text-label-code text-secondary text-[11px]">11 Jan 2026, 16:30:12 WIB</span>
+</div>
+</div>
+<!-- STAGE 2: Operator Lapangan (Isolator) (SELESAI) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-[14px]">
+                  2
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Operator Lapangan (Petugas Isolasi)</span>
+<span class="font-body-sm text-body-sm text-secondary">Pelepasan gembok personil &amp; inspeksi kesiapan valve mekanik</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-badge text-label-badge">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                Telah Ditandatangani
+              </div>
+</div>
+<!-- Checklists -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm pl-11">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">check_box</span>
+<span>Pelepasan gembok personil di Lock Box (MLB-WTP-004)</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">check_box</span>
+<span>Pengecekan visual katup &amp; damper bebas halangan gerak</span>
+</div>
+</div>
+<!-- Signee Digital Stamp -->
+<div class="ml-11 mt-1 bg-surface-container-lowest p-space-md rounded-lg flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-primary font-bold">
+                  SG
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-[13px] text-on-surface">Sugeng Riyadi (Operator Shift A Lapangan)</span>
+<span class="font-label-code text-label-code text-[11px] text-secondary">NIP. 9214022A • Digital Key Tag Released</span>
+</div>
+</div>
+<span class="font-label-code text-label-code text-secondary text-[11px]">11 Jan 2026, 16:42:05 WIB</span>
+</div>
+</div>
+<!-- STAGE 3: Petugas K3 & Keselamatan Lingkungan (CURRENT PENDING) -->
+<div class="bg-surface-container-highest/40 rounded-xl p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-primary font-bold text-[14px] shadow-sm">
+                  3
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+                    Petugas K3 &amp; Keselamatan Lingkungan
+                    <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Audit mitigasi bahaya &amp; verifikasi kelayakan release</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-container text-on-primary font-label-badge text-label-badge shadow-sm">
+<span class="material-symbols-outlined text-[16px]">pending_actions</span>
+                Menunggu Verifikasi Anda
+              </span>
+</div>
+<!-- Active Interactive Checklist for Safety Inspector -->
+<div class="flex flex-col gap-2.5 pl-11">
+<label class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-container-lowest cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-[13px] text-on-surface">Rekomendasi keselamatan kerja fisik terpenuhi</span>
+<span class="font-body-sm text-body-sm text-secondary">Telah dilakukan audit bersama isolator di area pompa WTP.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-container-lowest cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-[13px] text-on-surface">Area terbebas dari material kimia atau tumpahan licin</span>
+<span class="font-body-sm text-body-sm text-secondary">Dosing pump line netral, drainage gutter bersih sesuai baku mutu K3.</span>
+</div>
+</label>
+</div>
+<!-- Direct Verification Action Trigger -->
+<div class="ml-11 mt-1 flex flex-col sm:flex-row items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">admin_panel_settings</span>
+<span class="font-body-sm text-body-sm text-on-surface">Tindakan ini akan mengesahkan tahap 3 secara legal elektronik.</span>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-tertiary hover:bg-tertiary-container text-on-tertiary font-headline-sm text-[13px] px-space-lg py-2.5 rounded-lg shadow-sm transition-all" onclick="document.getElementById('pin-entry-card').scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+                Verifikasi K3 &amp; Otorisasi
+              </button>
+</div>
+</div>
+<!-- STAGE 4: Supervisor Operasi (LOCKED) -->
+<div class="bg-surface-container-low/50 rounded-xl p-space-lg flex flex-col gap-space-md opacity-75">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-on-secondary-fixed font-bold text-[14px]">
+                  4
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-secondary">Supervisor Operasi (Otoritas Tertinggi Penormalan)</span>
+<span class="font-body-sm text-body-sm text-secondary-fixed-variant">Izin energize sistem dan penormalan master key switch CCR</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-secondary font-label-badge text-label-badge">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                Terkunci - Menunggu Tahap 3
+              </div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary pl-11">
+              Gembok isolasi utama CCR dan izin pembukaan valve manifold otomatis akan diaktifkan setelah verifikator K3 membubuhkan persetujuan resmi.
+            </p>
+</div>
+</div>
+</div>
+<!-- Real-time Field Evidence & Isolation Points Gallery -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface">Dokumentasi Lapangan &amp; Kondisi Katup</h3>
+<p class="font-body-sm text-body-sm text-secondary">Bukti visual yang diunggah oleh Pelaksana dan Operator Lapangan</p>
+</div>
+<span class="font-label-code text-label-code text-primary bg-surface-container px-2 py-1 rounded">2 Foto Terlampir</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-2 rounded-lg bg-surface-container-low p-space-sm">
+<div class="bg-cover bg-center w-full h-44 rounded-lg" data-alt="High-resolution industrial photo of heavy steel water pipeline isolation valve in a thermal power plant. High contrast metal texture, safety chains with bright red lockout padlocks, lockout tagout tags, clear daylight factory illumination." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALJje_njBn1-dpskuLM5oL3okha2XvQKjyU3LQqBiV79-AOn3K3ubg0FAwB-vPg2CAY3bGc__RqDZAR4ZszESfLbEql8OvcKYnaqWgZ9DY9RLjPu9ca6kTxJqi6-zdUt2hr31dUPPGS6NVKjHQsZFvaqT9X8bnUpUDHBP97ztjKkvABSNl10pCXYk2i26TgYtVInD4VC6ZseuKMmmQDMU49jh2-E122iwH_VHxyN_1')"></div>
+<div class="flex items-center justify-between px-1">
+<span class="font-headline-sm text-headline-sm text-[12px] text-on-surface">Foto Katup Header Demin Bebas Obstruksi</span>
+<span class="font-label-badge text-label-badge text-secondary">16:35 WIB</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-lg bg-surface-container-low p-space-sm">
+<div class="bg-cover bg-center w-full h-44 rounded-lg" data-alt="Industrial photo of an open bright yellow metal Lock Box in a control plant station with neatly tagged master padlocks, physical inspection checklist clipboard nearby, sharp lighting, PLN Indonesia Power standards." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXyCH_b-l2NW0bObn960m9ugoPlWODDjcQN-0_-Sy3Jwcvx1N9ZIbzKe5LQrei62V1DNQ605PD43ElnphscV3D3l7wPS19DQ8bUHytfJf7ibe64feVHHz-XDQZwMvN0TuyLkcsZ1cJzJR5VgCKenB1bKjgjj6DG0R64K-HWo8mmRQu4kGNpeHzFzUfOi672EWdgHt6VXEEvHUVJ8Lyq5Tuas5o3bfGYyFQzPfK1nCO')"></div>
+<div class="flex items-center justify-between px-1">
+<span class="font-headline-sm text-headline-sm text-[12px] text-on-surface">Master Lock Box (MLB-WTP-004) Pelepasan Padlock</span>
+<span class="font-label-badge text-label-badge text-secondary">16:40 WIB</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT 4-COL: Authorization Terminal, PIN Verification & Pending Queue -->
+<div class="xl:col-span-4 flex flex-col gap-space-xl">
+<!-- Quick Authorization & Biometric/PIN Terminal -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg" id="pin-entry-card">
+<div class="flex items-center gap-space-md border-b-0 pb-1">
+<div class="w-10 h-10 rounded-xl bg-tertiary-container/15 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[24px]">pin</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface">Otorisasi Cepat Petugas</h3>
+<p class="font-body-sm text-body-sm text-secondary">Verifikasi K3 &amp; Keselamatan</p>
+</div>
+</div>
+<!-- Authorized User Profile Pill -->
+<div class="flex items-center gap-space-md p-space-md bg-surface-container-low rounded-xl">
+<div class="w-11 h-11 rounded-lg bg-primary text-on-primary flex items-center justify-center font-bold text-[16px]">
+            HS
+          </div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-[13px] text-on-surface truncate">Hendra Setiawan, S.T.</span>
+<span class="w-2 h-2 rounded-full bg-primary-container" title="Aktif"></span>
+</div>
+<span class="font-label-code text-label-code text-[11px] text-secondary">Ahli K3 Utama (ID: K3-CLG-084)</span>
+</div>
+</div>
+<!-- Form Security Inputs -->
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-headline-sm text-headline-sm text-[12px] text-on-surface flex justify-between">
+<span>Masukkan 6-Digit PIN Otorisasi</span>
+<span class="text-primary font-normal cursor-pointer hover:underline">Gunakan QR Badge</span>
+</label>
+<div class="grid grid-cols-6 gap-2">
+<input class="h-11 text-center font-stat-metric text-stat-metric bg-surface-container-high rounded-lg text-on-surface focus:outline-none focus:bg-surface-container-highest" maxlength="1" type="password" value="8"/>
+<input class="h-11 text-center font-stat-metric text-stat-metric bg-surface-container-high rounded-lg text-on-surface focus:outline-none focus:bg-surface-container-highest" maxlength="1" type="password" value="2"/>
+<input class="h-11 text-center font-stat-metric text-stat-metric bg-surface-container-high rounded-lg text-on-surface focus:outline-none focus:bg-surface-container-highest" maxlength="1" type="password" value="9"/>
+<input class="h-11 text-center font-stat-metric text-stat-metric bg-surface-container rounded-lg text-on-surface focus:outline-none focus:bg-surface-container-highest" maxlength="1" placeholder="•" type="password"/>
+<input class="h-11 text-center font-stat-metric text-stat-metric bg-surface-container rounded-lg text-on-surface focus:outline-none focus:bg-surface-container-highest" maxlength="1" placeholder="•" type="password"/>
+<input class="h-11 text-center font-stat-metric text-stat-metric bg-surface-container rounded-lg text-on-surface focus:outline-none focus:bg-surface-container-highest" maxlength="1" placeholder="•" type="password"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-headline-sm text-headline-sm text-[12px] text-on-surface">
+              Catatan Lapangan &amp; Temuan Verifikasi
+            </label>
+<textarea class="w-full rounded-lg bg-surface-container p-2.5 text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-highest resize-none" placeholder="Semua parameter aman, siap dinormalkan..." rows="2"></textarea>
+</div>
+<!-- QR PLN Badge Scan Option -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">qr_code_scanner</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Scan Smart Badge ID Card</span>
+</div>
+<button class="font-label-badge text-label-badge bg-surface-container-highest text-primary px-2.5 py-1 rounded">Aktifkan Kamera</button>
+</div>
+<!-- Submit Buttons -->
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary py-3 rounded-lg font-headline-sm text-[14px] shadow-sm flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+            Beri Otorisasi Pelepasan LOTO
+          </button>
+<button class="w-full bg-surface-container-low hover:bg-surface-container text-tertiary py-2.5 rounded-lg font-headline-sm text-[13px] flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+            Tolak &amp; Kembalikan ke Tim Kerja
+          </button>
+</div>
+</div>
+<!-- Compact Queue Panel: Other Pending Releases in Shift B -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Antrean Release Lainnya</h4>
+<span class="font-body-sm text-body-sm text-secondary">4 Permohonan Masuk</span>
+</div>
+<span class="font-label-badge text-label-badge bg-surface-container text-secondary px-2 py-0.5 rounded">Hari Ini</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Queue Item 1 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-primary font-bold">LOTO-2026-0029</span>
+<span class="font-label-badge text-label-badge bg-surface-container-highest text-on-secondary-container px-2 py-0.5 rounded">Tahap 1</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[13px] text-on-surface truncate">Condensate Pump 1B MCC Breaker</span>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-secondary text-[11px]">
+<span>KKS: 10LCA10-AP002</span>
+<span>15:10 WIB</span>
+</div>
+</div>
+<!-- Queue Item 2 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-primary font-bold">LOTO-2026-0031</span>
+<span class="font-label-badge text-label-badge bg-surface-container-highest text-on-secondary-container px-2 py-0.5 rounded">Tahap 2</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[13px] text-on-surface truncate">Gas Turbine Air Intake Damper</span>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-secondary text-[11px]">
+<span>KKS: 10MBA11-AA001</span>
+<span>15:50 WIB</span>
+</div>
+</div>
+<!-- Queue Item 3 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-primary font-bold">LOTO-2026-0034</span>
+<span class="font-label-badge text-label-badge bg-surface-container-highest text-on-secondary-container px-2 py-0.5 rounded">Tahap 2</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[13px] text-on-surface truncate">HRSG HP Drum Level Control Valve</span>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-secondary text-[11px]">
+<span>KKS: 10HAD10-AA101</span>
+<span>16:15 WIB</span>
+</div>
+</div>
+<!-- Queue Item 4 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-primary font-bold">LOTO-2026-0035</span>
+<span class="font-label-badge text-label-badge bg-surface-container-highest text-on-secondary-container px-2 py-0.5 rounded">Tahap 1</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[13px] text-on-surface truncate">Aux Cooling Water Strainer Motor</span>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-secondary text-[11px]">
+<span>KKS: 10PCB20-AP001</span>
+<span>16:30 WIB</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Emergency Hotline Strip -->
+<div class="bg-surface-container-high p-space-md rounded-xl flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[22px]">phone_in_talk</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-[12px]">Radio Lapangan CCR Ch. 4</span>
+<span class="font-body-sm text-body-sm text-secondary text-[11px]">UBP Cilegon Internal Call Ext. 210</span>
+</div>
+</div>
+<button class="font-label-badge text-label-badge bg-surface-container-lowest text-primary px-3 py-1.5 rounded-lg shadow-sm">
+          Panggil CCR
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Highlight active sidebar navigation item dynamically
+  (function initActiveMenu() {
+    const verifLink = document.querySelector('aside nav a[data-path="verifikasi"]');
+    if (verifLink) {
+      verifLink.classList.remove('text-secondary-fixed-dim');
+      verifLink.classList.add('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-sm');
+    }
+  })();
+</script></main></div></body></html>
