@@ -34,7 +34,7 @@ services:
       PORT: 3000
       APP_TIMEZONE: "Asia/Jakarta"
     ports:
-      - "3000:3000"
+      - "3122:3000"
 
 volumes:
   postgres_data:
