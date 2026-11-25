@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import { formatDateWIB, getStatusBadgeClass } from "@/lib/utils";
 
-export default function DataLotoPage() {
+function DataLotoContent() {
   const searchParams = useSearchParams();
   const initialStatus = searchParams.get("status") || "Semua";
 
@@ -566,5 +566,13 @@ export default function DataLotoPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function DataLotoPage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-sm text-secondary">Memuat data LOTO...</div>}>
+      <DataLotoContent />
+    </Suspense>
   );
 }
